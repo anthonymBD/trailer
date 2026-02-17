@@ -1,0 +1,64 @@
+@import url("@fontsource/dm-sans");
+@import url("@fontsource/outfit");
+@import 'tailwindcss';
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-outfit: 'Outfit Variable', sans-serif;
+  --font-dm-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  /* Added ; here */
+
+  --color-primary: #001426;
+  --color-secondary: #6B9C9C;
+  --color-accent: #E07A5F;
+
+}
+
+    @layer base {
+h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 { font-family:var(--font-outfit);}
+
+      h1 {
+        font-size: 84px;
+        line-height: 110%;
+      }
+
+      h2 {
+        font-size: 60px;
+        line-height: 120%;
+      }
+
+      h3 {
+        font-size: 48px;
+        line-height: 120%;
+      }
+
+      h4 {
+        font-size: 40px;
+        line-height: 120%;
+      }
+
+      h5 {
+        font-size: 32px;
+        line-height: 110%;
+      }
+
+      h6 {
+        font-size: 84px;
+        line-height: 110%;
+      }
+
+      p,a{font-size:18px;
+        line-height: 160%;
+        font-family: var(--font-dm-sans);
+      }
+    }
+
+    .faq{ background-color: white !important;}

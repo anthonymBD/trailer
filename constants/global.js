@@ -67,5 +67,54 @@ const testimonials = {
     },
 };
 
+export const footer = {
+    description:
+        "Premium teardrop trailers that make weekends feel like weekends again. Australian made, adventure tested.",
+
+    columns: [
+        {
+            title: "Models",
+            links: [
+                { label: "Breath Essential", href: "/models/essential" },
+                { label: "Breath Plus", href: "/models/plus" },
+                { label: "Breath Ultra", href: "/models/ultra" },
+                { label: "Breath Max", href: "/models/max" },
+                { label: "Compare Models", href: "/compare" },
+            ],
+        },
+        {
+            title: "Company",
+            links: [
+                { label: "Our Story", href: "/about" },
+                { label: "Ambassador Network", href: "/ambassadors" },
+                { label: "Press & Awards", href: "/press" },
+                { label: "Sustainability", href: "/sustainability" },
+                { label: "Careers", href: "/careers" },
+            ],
+        },
+        {
+            title: "Support",
+            links: [
+                { label: "FAQ", href: "/faq" },
+                { label: "Owner's Manual", href: "/manual" },
+                { label: "Financing", href: "/financing" },
+                { label: "Warranty", href: "/warranty" },
+                { label: "Contact Us", href: "/contact" },
+            ],
+        },
+    ],
+
+    bottom: {
+        copyright: "© 2025 Breath Trailer. All rights reserved.",
+        social: [
+            { label: "Instagram", href:"#"},
+            { label: "facebook", href: "#" },
+            { label: "youtube", href: "#" }
+        ]
+
+    },
+};
+
+
 
 export { navLinks, logo, testimonials }

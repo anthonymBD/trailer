@@ -1,3 +1,4 @@
+
 const models = {
     1: {
         title: "Find your fit",
@@ -12,6 +13,7 @@ const models = {
                 button: "Explore Essential",
                 image: "/images/models/essential.jpg",
                 featured: false,
+                slug: "essential",
             },
             {
                 name: "Plus",
@@ -22,6 +24,7 @@ const models = {
                 button: "Explore Plus",
                 image: "/images/models/plus.jpg",
                 featured: true,
+                slug: "plus",
             },
             {
                 name: "Ultra",
@@ -32,9 +35,197 @@ const models = {
                 button: "Explore Ultra",
                 image: "/images/models/ultra.jpg",
                 featured: false,
+                slug: "ultra",
+            },
+            {
+                name: "Max",
+                tag: "FULL COMFORT",
+                price: "$39K",
+                weekly: "From $79/week",
+                desc: "Stand-up living in a tow-anywhere footprint.",
+                button: "Explore Max",
+                image: "/images/models/max.jpg",
+                featured: false,
+                slug: "max",
             },
         ],
     },
 };
 
-export { models }
+// =========================
+// MODEL DETAIL PAGES
+// =========================
+
+const modelPages = {
+    essential: {
+        title: "Breath Essential",
+        price: "From $19,990",
+        hero: "/images/models/essential.jpg",
+
+        description:
+            "The Breath Essential is our budget-friendly entry model designed to maximise value and flexibility while keeping a compact footprint. Includes a comfortable double bed and is ideal for limited garage space.",
+
+        sections: [
+            {
+                title: "Dimensions",
+                items: [
+                    "Body: 2900mm × 1500mm × 1200mm",
+                    "Overall: 3900mm × 2000mm × 1600mm",
+                    "Weight: Tare 700kg | GTM 1380kg | ATM 1500kg",
+                ],
+            },
+            {
+                title: "Comfort",
+                items: [
+                    "140x200cm premium mattress bed",
+                    "Customisable exterior & cabinetry colors",
+                    "Foldable dining/work table",
+                ],
+            },
+            {
+                title: "Kitchen",
+                items: [
+                    "Stainless steel counter & sink",
+                    "Slide-out stove compartment",
+                ],
+                
+            },
+            {
+                title: "Construction",
+                items: [
+                    "Steel chassis with hot-dipped zinc galvanisation",
+                    " Galvanised sheet body & plastic honeycomb floor",
+                ],
+            },
+            {
+                title: "Access and lighting",
+                items: [
+                    " Two side doors – lockable & screened",
+                    " Internal & external 12V lighting",
+                ],
+            },
+            {
+                title: "Access and lighting",
+                items: [
+                    " Two side doors – lockable & screened",
+                    " Internal & external 12V lighting",
+                ],
+            },
+            {
+                title: "Water and Power",
+                items: [
+                    " 80L water tank",
+                    " 24Ah lithium battery",
+                    " USB ports + 12V outlet",
+                ],
+            },
+            {
+                title: "Safety and Traction",
+                items: [
+                    " Coupling, traction ball & safety chains",
+                    " Leaf spring system with torsion suspension",
+                    " Electric & hand brake",
+                    " 15” alloy wheels",
+                ],
+            },
+        ],
+       
+    },
+
+    plus: {
+        title: "Breath Plus",
+        price: "From $24,990",
+        hero: "/images/models/plus.jpg",
+
+        description:
+            "Ready for adventure the instant you make it yours. Built for longer off-grid trips while staying compact and easy to tow.",
+
+        sections: [
+            {
+                title: "Dimensions",
+                items: [
+                    "Body: 2900mm × 1500mm × 1200mm",
+                    "Overall: 3900mm × 2000mm × 1600mm",
+                    "Tare: 800kg | GTM: 1380kg | ATM: 1500kg",
+                ],
+            },
+            {
+                title: "Comfort",
+                items: [
+                    "Premium mattress bed",
+                    "Customisable colours",
+                    "Foldable dining/work table",
+                ],
+            },
+            {
+                title: "Kitchen",
+                items: [
+                    "Fridge included",
+                    "Double stove",
+                    "Overhead storage shelf",
+                ],
+            },
+        ],
+    },
+
+    ultra: {
+        title: "Breath Ultra",
+        price: "From $30,290",
+        hero: "/images/models/ultra.jpg",
+
+        description:
+            "The pinnacle of off-grid teardrop travel trailers. Includes every feature of the Plus and adds premium upgrades for comfort and independence.",
+
+        sections: [
+            {
+                title: "Power & Water",
+                items: [
+                    "2× 80L water tanks",
+                    "120Ah lithium battery",
+                    "Solar panel installed",
+                    "Inverter for 240V appliances",
+                ],
+            },
+            {
+                title: "Comfort",
+                items: [
+                    "Pop-up living room table",
+                    "Additional storage cupboards",
+                    "Kitchen LED lighting",
+                ],
+            },
+        ],
+    },
+
+    max: {
+        title: "Breath Max",
+        price: "From $39,000",
+        hero: "/images/models/max.jpg",
+
+        description:
+            "Stand-up teardrop camper with a full bathroom, indoor table, and real living space in a compact towable footprint.",
+
+        sections: [
+            {
+                title: "Interior",
+                items: [
+                    "Stand-up cabin height",
+                    "Indoor toilet & shower",
+                    "Queen bed",
+                    "Convertible sofa table",
+                ],
+            },
+            {
+                title: "Utilities",
+                items: [
+                    "Solar system",
+                    "120Ah lithium battery",
+                    "Upright fridge",
+                    "Dual water tanks",
+                ],
+            },
+        ],
+    },
+};
+
+export { models, modelPages };

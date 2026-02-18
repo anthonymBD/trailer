@@ -6,7 +6,14 @@ export default function DesktopNav() {
         <div className="hidden md:flex items-center justify-between">
             <Link to="/" className="flex items-center gap-2">
             
-                <p className="text-xl font-bold text-primary">{logo.title}</p>
+                <p>
+                    <img
+                        src={logo.image}
+                        alt=""
+                      
+                    />
+
+                    {logo.title}</p>
             </Link>
 
             <nav className="flex items-center gap-4">

@@ -15,10 +15,10 @@ const Home = () => {
   return (
 <>
 <Hero />
- <FeaturesOne className="bg-white text-primary" />
- 
+ <FeaturesOne className="bg-white text-primary"  />
+      <CtaOne data={ctaContent.main} images={ctaContent.images} variant='simple' />
       <Testimonials sectionId={1}  className="bg-primary text-white" /> 
-      <CtaOne data={ctaContent.main} variant='simple' />
+   
       <Models sectionId={1} className="bg-white" />
       <FAQ sectionId={1} className="bg-primary" />
 </>

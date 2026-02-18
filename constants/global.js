@@ -25,7 +25,8 @@ const navLinks = [
 
 const logo = {
     id: "logo",
-    title: "breath trailers"
+    title: "breath trailers",
+    image: "/images/svgs/logo.svg",
 }
 
 const testimonials = {

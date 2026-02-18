@@ -20,7 +20,7 @@ const MobileNav = () => {
       <nav className="md:hidden" role="navigation" aria-label="Mobile Navigation">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2" onClick={closeMenu}>
-            <img src="/images/logo.png" alt={logo.title} className="w-8 h-8" />
+            <img src="{logo.image}" alt={logo.title} className="w-8 h-8" />
             <p className="text-xl font-bold text-gray-900">{logo.title}</p>
           </Link>
 

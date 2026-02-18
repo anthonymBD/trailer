@@ -30,20 +30,20 @@ const FeatureCard = ({ section }) => {
         // Calculate how much the card's top position changed
         const topDiff = rect.top - previous.top;
         
-        // Also account for height change if we're expanding (content grows downward)
-        // When expanding, we want to keep the top stable, so we scroll by the top difference
-        // When collapsing, the content shrinks, so we also need to adjust
         if (Math.abs(topDiff) > 0.5) {
-            // Use scrollBy with instant behavior to prevent jump
-            window.scrollBy({
-                top: topDiff,
+            // Adjust scroll to maintain the card's position relative to viewport
+            // Use the stored scroll position plus the difference
+            window.scrollTo({
+                top: previous.scrollY + topDiff,
                 behavior: 'instant'
             });
         }
 
-        // Reset flags
-        isTogglingRef.current = false;
-        previousMetricsRef.current = null;
+        // Reset after a brief delay to allow any remaining layout to settle
+        requestAnimationFrame(() => {
+            isTogglingRef.current = false;
+            previousMetricsRef.current = null;
+        });
     }, [open]);
 
     const toggle = () => {
@@ -52,17 +52,30 @@ const FeatureCard = ({ section }) => {
         const card = cardRef.current;
         const rect = card.getBoundingClientRect();
         
-        // Store comprehensive metrics BEFORE state change
-        previousMetricsRef.current = {
-            top: rect.top,
-            height: rect.height,
-            scrollY: window.scrollY
-        };
+        // Store position BEFORE state change (relative to viewport)
+        const beforeTop = rect.top;
+        const beforeScrollY = window.scrollY;
+        
+        // Temporarily disable transition for instant layout calculation
+        card.style.transition = 'none';
         
         isTogglingRef.current = true;
+        previousMetricsRef.current = {
+            top: beforeTop,
+            scrollY: beforeScrollY
+        };
 
-        // Update state - useLayoutEffect will handle scroll adjustment
+        // Update state
         setOpen(prev => !prev);
+
+        // Re-enable transition after a brief moment
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                if (cardRef.current) {
+                    cardRef.current.style.transition = '';
+                }
+            });
+        });
     };
 
     return (

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FiPhone, FiCalendar, FiCheckCircle } from "react-icons/fi";
 import { ChevronDown } from "lucide-react";
@@ -12,39 +12,57 @@ import { ctaContent } from "../../constants/cta";
 const FeatureCard = ({ section }) => {
     const [open, setOpen] = useState(false);
     const cardRef = useRef(null);
+    const previousMetricsRef = useRef(null);
+    const isTogglingRef = useRef(false);
 
     const previewCount = 3;
     const preview = section.items.slice(0, previewCount);
     const rest = section.items.slice(previewCount);
 
+    // Use useLayoutEffect to adjust scroll synchronously after DOM update
+    useLayoutEffect(() => {
+        if (!isTogglingRef.current || !cardRef.current || !previousMetricsRef.current) return;
+
+        const card = cardRef.current;
+        const rect = card.getBoundingClientRect();
+        const previous = previousMetricsRef.current;
+
+        // Calculate how much the card's top position changed
+        const topDiff = rect.top - previous.top;
+        
+        // Also account for height change if we're expanding (content grows downward)
+        // When expanding, we want to keep the top stable, so we scroll by the top difference
+        // When collapsing, the content shrinks, so we also need to adjust
+        if (Math.abs(topDiff) > 0.5) {
+            // Use scrollBy with instant behavior to prevent jump
+            window.scrollBy({
+                top: topDiff,
+                behavior: 'instant'
+            });
+        }
+
+        // Reset flags
+        isTogglingRef.current = false;
+        previousMetricsRef.current = null;
+    }, [open]);
+
     const toggle = () => {
         if (!cardRef.current) return;
 
-        // Get position BEFORE state change
-        const before = cardRef.current.getBoundingClientRect().top;
-        const scrollY = window.scrollY;
+        const card = cardRef.current;
+        const rect = card.getBoundingClientRect();
+        
+        // Store comprehensive metrics BEFORE state change
+        previousMetricsRef.current = {
+            top: rect.top,
+            height: rect.height,
+            scrollY: window.scrollY
+        };
+        
+        isTogglingRef.current = true;
 
-        // Update state
+        // Update state - useLayoutEffect will handle scroll adjustment
         setOpen(prev => !prev);
-
-        // Use double requestAnimationFrame to ensure DOM has fully updated
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                if (!cardRef.current) return;
-                
-                // Get position AFTER state change
-                const after = cardRef.current.getBoundingClientRect().top;
-                
-                // Calculate the difference and adjust scroll
-                const diff = after - before;
-                if (Math.abs(diff) > 0.5) { // Only adjust if difference is significant
-                    window.scrollBy({
-                        top: diff,
-                        behavior: 'instant'
-                    });
-                }
-            });
-        });
     };
 
     return (

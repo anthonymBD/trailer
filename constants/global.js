@@ -45,7 +45,7 @@ export const navLinks = [
 export const logo = {
     id: "logo",
     title: "Breath Trailers",
-    image: "/svgs/logo.svg",
+    image: "/images/svgs/logo.svg",
 };
 
 /* ---------------- FOOTER ---------------- */
@@ -62,7 +62,7 @@ export const footer = {
                 { label: "Plus", href: "/models/plus" },
                 { label: "Ultra", href: "/models/ultra" },
                 { label: "Max", href: "/models/max" },
-                { label: "Compare Models", href: "#" },
+                { label: "Compare Models", href: "/models/essential" },
             ],
         },
         {

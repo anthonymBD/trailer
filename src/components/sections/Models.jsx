@@ -27,7 +27,7 @@ const Models = ({ sectionId, className = "" }) => {
                         <div
                             key={i}
                             className={`rounded-2xl overflow-hidden bg-white text-neutral-900 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl
-              ${model.featured ? "border-2 border-[#E07A5F]" : "border border-black/10"}`}
+              ${model.featured ? "border-2 border-accent" : "border border-black/10"}`}
                         >
                             {/* Image */}
                             <div className="aspect-[4/3] bg-neutral-200">
@@ -41,7 +41,7 @@ const Models = ({ sectionId, className = "" }) => {
                             {/* Info */}
                             <div className="p-8 text-center space-y-4">
                                 <div
-                                    className={`text-xs tracking-[0.15em] font-semibold ${model.featured ? "text-[#E07A5F]" : "text-emerald-700/70"
+                                    className={`text-xs tracking-[0.15em] font-semibold ${model.featured ? "text-accent" : "text-emerald-700/70"
                                         }`}
                                 >
                                     {model.tag}

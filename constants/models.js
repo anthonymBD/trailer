@@ -60,7 +60,7 @@ const modelPages = {
     essential: {
         title: "Breath Essential",
         price: "From $19,990",
-        hero: "/images/models/essential.jpg",
+        hero: "/images/ctaOne.jpg",
 
         description:
             "The Breath Essential is our budget-friendly entry model designed to maximise value and flexibility while keeping a compact footprint. Includes a comfortable double bed and is ideal for limited garage space.",
@@ -135,7 +135,7 @@ const modelPages = {
     plus: {
         title: "Breath Plus",
         price: "From $24,990",
-        hero: "/images/models/plus.jpg",
+        hero: "/images/breathPlus.jpg",
 
         description:
             "Ready for adventure the instant you make it yours. Built for longer off-grid trips while staying compact and easy to tow.",
@@ -219,7 +219,7 @@ const modelPages = {
     ultra: {
         title: "Breath Ultra",
         price: "From $30,290",
-        hero: "/images/models/ultra.jpg",
+        hero: "/images/ultra.jpg",
 
         description:
             "The pinnacle of off-grid teardrop travel trailers. Includes every feature of the Plus and adds premium upgrades for comfort and independence.",
@@ -279,7 +279,7 @@ const modelPages = {
     max: {
         title: "Breath Max",
         price: "From $39,000",
-        hero: "/images/models/max.jpg",
+        hero: "/images/max.jpg",
 
         description:
             "Stand-up teardrop camper with a full bathroom, indoor table, and real living space in a compact towable footprint.",

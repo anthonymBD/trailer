@@ -13,7 +13,7 @@ const FAQ = ({ sectionId, className = "" }) => {
     if (!data) return null;
 
     return (
-        <section className={`py-24 ${className}`}>
+        <section className={`y ${className}`}>
             <div className="max-w-5xl mx-auto p-12 bg-white">
 
                 {/* Header */}

@@ -81,18 +81,18 @@ const FeatureCard = ({ section }) => {
     return (
         <div
             ref={cardRef}
-            className="group border border-[#001426]/10 rounded-2xl p-7 hover:border-[#6B9C9C]/50 hover:shadow-xl transition-all duration-300 bg-white flex flex-col"
+            className="group border border-primary rounded-2xl p-7 hover:border-secondary hover:shadow-xl transition-all duration-300 bg-white flex flex-col"
         >
             {/* Category */}
-            <h3 className="text-lg font-semibold tracking-wide text-[#001426] mb-6">
+            <h3 className="text-lg font-semibold tracking-wide text-primary mb-6">
                 {section.title}
             </h3>
 
             {/* Items */}
-            <ul className="space-y-4 text-[#001426]/75 font-[DM_Sans] flex-1">
+            <ul className="space-y-4 text-primary font-dm-sans flex-1">
                 {[...preview, ...(open ? rest : [])].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
-                        <FiCheckCircle className="text-[#6B9C9C] mt-1 shrink-0" />
+                        <FiCheckCircle className="text-secondary mt-1 shrink-0" />
                         <span>{item}</span>
                     </li>
                 ))}
@@ -125,7 +125,7 @@ const ModelPage = () => {
     }
 
     return (
-        <div className="bg-white text-[#001426] font-[Outfit]">
+        <div className="bg-white text-primary font-outfit">
 
             {/* HERO */}
             <section className="w-full min-h-[85vh] flex items-center justify-center px-6 md:px-20 py-24 bg-[#001426] text-white">
@@ -141,7 +141,7 @@ const ModelPage = () => {
                         </p>
 
                         <div className="flex items-center gap-6 pt-4">
-                            <button className="flex items-center gap-3 bg-[#E07A5F] text-white px-7 py-4 rounded-xl hover:opacity-90 transition">
+                            <button className="flex items-center gap-3 bg-accent text-white px-7 py-4 rounded-xl hover:opacity-90 transition">
                                 <FiCalendar />
                                 Book Viewing
                             </button>
@@ -152,7 +152,7 @@ const ModelPage = () => {
                             </button>
                         </div>
 
-                        <div className="text-2xl text-[#6B9C9C] font-medium pt-6">
+                        <div className="text-2xl text-secondary font-medium pt-6">
                             {model.price}
                         </div>
                     </div>
@@ -176,7 +176,7 @@ const ModelPage = () => {
                     <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
                         Included Features
                     </h2>
-                    <p className="text-lg text-[#001426]/70 font-[DM_Sans] mt-4">
+                    <p className="text-lg text-primary font-dm-sans mt-4">
                         Everything you need for comfortable off-grid travel, thoughtfully built into a compact footprint.
                     </p>
                 </div>

@@ -10,8 +10,8 @@ const Testimonials = ({ sectionId, className = "" }) => {
     if (!data) return null;
 
     return (
-        <section className={`py-24 ${className}`}>
-            <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <section className={`py-28 ${className}`}>
+            <div className="max-w-7xl mx-auto  px-6">
 
                 <div className="text-center mb-16 max-w-3xl mx-auto space-y-4">
                     <motion.h2

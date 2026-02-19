@@ -9,7 +9,7 @@ const Hero = () => {
     });
 
     // Parallax effect for mountain - moves down slower than scroll
-    const mountainY = useTransform(scrollYProgress, [0, 1], [-200, 150]);
+    const mountainY = useTransform(scrollYProgress, [0, 1], [-190, 150]);
 
     return (
         <section 
@@ -50,7 +50,7 @@ const Hero = () => {
                     {/* LEFT SIDE */}
                     <div className="max-w-xl">
                         <motion.h1 
-                            className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[0.95]"
+                            className="text-[50vw] md:text-7xl lg:text-8xl font-extrabold leading-[0.95]"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}

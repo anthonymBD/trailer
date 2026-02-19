@@ -18,7 +18,7 @@ const featureIcons = [
 const FeaturesOne = ({ className = "" }) => {
     return (
         <section className={`mt-24 md:mt-6 ${className}`}>
-            <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 md:py-20">
+            <div className="max-w-7xl mx-auto px-6 lg:px-12 py-28 md:py-20">
 
                 <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
 

@@ -58,7 +58,7 @@ const Hero = () => {
                             className="
                                 font-extrabold leading-[0.92]
                                 text-[clamp(3.2rem,6.5vw,6.8rem)]
-                                tracking-tight
+                               
                             "
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}

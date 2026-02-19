@@ -39,7 +39,7 @@ export default function DesktopNav() {
                                 <Link
                                     key={link.id}
                                     to={href}
-                                    className="inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:shadow-md hover:-translate-y-px transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2"
+                                    className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:shadow-md hover:-translate-y-px transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2"
                                 >
                                     {content}
                                 </Link>
@@ -50,7 +50,7 @@ export default function DesktopNav() {
                             <a
                                 key={link.id}
                                 href={href}
-                                className="inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:shadow-md hover:-translate-y-px transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2"
+                                className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:shadow-md hover:-translate-y-px transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2"
                             >
                                 {content}
                             </a>

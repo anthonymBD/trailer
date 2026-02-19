@@ -1,30 +1,33 @@
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform } from "framer-motion";
+
+const ease = [0.25, 0.1, 0.25, 1];
 
 const Hero = () => {
     const sectionRef = useRef(null);
+
     const { scrollYProgress } = useScroll({
         target: sectionRef,
         offset: ["start end", "end start"]
     });
 
-    // Parallax effect for mountain - moves down slower than scroll
     const mountainY = useTransform(scrollYProgress, [0, 1], [-190, 150]);
 
     return (
-        <section 
+        <section
             ref={sectionRef}
-            className="bg-primary text-white relative z-0 overflow-hidden pt-24"
+            className="bg-primary text-white relative overflow-hidden pt-32"
         >
+
             {/* PARALLAX MOUNTAIN */}
-            <motion.div 
-                className="absolute -bottom-1 left-0 w-full z-0 pointer-events-none overflow-hidden"
+            <motion.div
+                className="absolute -bottom-1 left-0 w-full pointer-events-none"
                 style={{ y: mountainY }}
             >
                 <svg
                     viewBox="0 0 1440 303"
                     className="w-full h-auto mix-blend-multiply opacity-30"
-                    preserveAspectRatio="none" 
+                    preserveAspectRatio="none"
                     id="mountain"
                 >
                     <g>
@@ -42,134 +45,104 @@ const Hero = () => {
                     </g>
                 </svg>
             </motion.div>
-            
 
-            {/* CONTENT WRAPPER */}
-            <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 pb-20">
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    {/* LEFT SIDE */}
-                    <div className="max-w-xl">
-                        <motion.h1 
-                            className="text-[50vw] md:text-7xl lg:text-8xl font-extrabold leading-[0.95]"
-                            initial={{ opacity: 0, y: 30 }}
+            {/* CONTENT RAIL — SAME STRUCTURE AS FEATURES */}
+            <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24">
+
+                <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+
+                    {/* LEFT CONTENT */}
+                    <div className="flex-1 max-w-xl">
+
+                        <motion.h1
+                            className="
+                                font-extrabold leading-[0.92]
+                                text-[clamp(3.2rem,6.5vw,6.8rem)]
+                                tracking-tight
+                            "
+                            initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ 
-                                duration: 0.8, 
-                                ease: [0.25, 0.1, 0.25, 1],
-                                staggerChildren: 0.1
-                            }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.9, ease }}
                         >
-                            <motion.span
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.1 }}
-                            >
-                                Your weekends
-                            </motion.span>
+                            Your weekends
                             <br />
-                            <motion.span
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.2 }}
-                            >
-                                start <span className="text-accent relative">
-                                    now
-                                    <motion.span
-                                        id="blink"
-                                        className="absolute left-0 -bottom-3 w-full h-2 bg-accent"
-                                        // Keyframes: Start at 90%, go to 20%, back to 90%
-                                        animate={{ opacity: [0.9, 0.2, 0.9] }}
-                                        transition={{
-                                            duration: 2.5,
-                                            repeat: Infinity,
-                                            ease: "easeInOut"
-                                        }}
-                                    />
-                                </span>
-                            </motion.span>
+                            start{" "}
+                            <span className="text-accent relative inline-block">
+                                now
+                                <motion.span
+                                    className="absolute left-0 -bottom-3 w-full h-2 bg-accent"
+                                    animate={{ opacity: [0.9, 0.2, 0.9] }}
+                                    transition={{ duration: 2.5, repeat: Infinity }}
+                                />
+                            </span>
                         </motion.h1>
 
-                        <motion.p 
+                        <motion.p
                             className="mt-8 text-lg text-white/80 leading-relaxed"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.7, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.25, duration: 0.7, ease }}
                         >
                             Stop planning escapes and start taking them. A Breath trailer is
                             lightweight, affordable, and ready to go whenever you are.
                         </motion.p>
 
-                        <motion.div 
-                            className="mt-8 flex gap-4"
+                        <motion.div
+                            className="mt-10 flex gap-4"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.7, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.35, duration: 0.7, ease }}
                         >
                             <button className="bg-secondary text-primary px-6 py-3 rounded-md font-semibold hover:brightness-110 transition">
                                 Reserve
                             </button>
+
                             <button className="border border-white/40 px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-primary transition">
                                 Learn
                             </button>
                         </motion.div>
 
-                        <motion.div 
-                            className="mt-12 flex gap-10 text-sm text-white/80"
+                        <motion.div
+                            className="mt-14 flex gap-10 text-sm text-white/80"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.7, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.45, duration: 0.7, ease }}
                         >
                             <div>
                                 <p>Gold Award Winner</p>
-                                <div className="mt-2 h-1 w-42 bg-accent mb-2"></div>
+                                <div className="mt-2 h-1 w-44 bg-accent"></div>
                             </div>
+
                             <div>
                                 <p>Australian Made</p>
-                                <div className="mt-2 h-1 w-42 bg-secondary mb-2"></div>
+                                <div className="mt-2 h-1 w-44 bg-secondary"></div>
                             </div>
                         </motion.div>
                     </div>
 
-                    {/* RIGHT SIDE IMAGE */}
-                    <motion.div 
-                        className="relative flex justify-center md:justify-end"
-                        initial={{ opacity: 0, scale: 0.95 }}
+                    {/* RIGHT IMAGE — NOW FILLS REMAINING SPACE */}
+                    <motion.div
+                        className="flex-1 w-full"
+                        initial={{ opacity: 0, scale: 0.96 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ 
-                            duration: 0.9, 
-                            delay: 0.3,
-                            ease: [0.25, 0.1, 0.25, 1]
-                        }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, ease }}
                     >
-                        <motion.div 
-                            className="absolute inset-6 bg-gradient-to-br from-[#12354a] to-[#001426] rounded-3xl blur-2xl opacity-40"
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 0.4, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1.2, delay: 0.4 }}
-                        ></motion.div>
+                        <div className="relative">
+                            <div className="absolute inset-6 bg-gradient-to-br from-[#12354a] to-[#001426] rounded-3xl blur-2xl opacity-40"></div>
 
-                        <motion.img
-                            src="/images/hero.jpg"
-                            alt="Breath trailer"
-                            className="relative w-full max-w-md md:max-w-lg rounded-3xl object-cover shadow-2xl"
-                            initial={{ opacity: 0, scale: 0.96 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ 
-                                duration: 1, 
-                                delay: 0.5,
-                                ease: [0.25, 0.1, 0.25, 1]
-                            }}
-                        />
+                            <img
+                                src="/images/hero.jpg"
+                                alt="Breath trailer"
+                                className="relative w-full h-[420px] md:h-[560px] lg:h-[640px] object-cover rounded-3xl shadow-2xl"
+                            />
+                        </div>
                     </motion.div>
+
                 </div>
             </div>
         </section>

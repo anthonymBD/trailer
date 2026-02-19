@@ -8,7 +8,7 @@ const testimonials = {
                 quote:
                     "We've done more in three months than we did in three years of talking about it.",
                 avatar:
-                    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/1yCqfujAIQ/jaaa7x28_expires_30_days.png",
+                    "/images/womanOne.webp",
                 name: "Sarah Mitchell",
                 title: "Marketing director, Sydney",
             },
@@ -17,7 +17,7 @@ const testimonials = {
                 quote:
                     "My kids actually want to come on weekends now. That's worth everything.",
                 avatar:
-                    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/1yCqfujAIQ/jj7keqp5_expires_30_days.png",
+                    "/images/manOne.webp",
                 name: "James Chen",
                 title: "Father of two, Melbourne",
             },
@@ -26,7 +26,7 @@ const testimonials = {
                 quote:
                     "It's the best decision we made. No regrets, just sunrises.",
                 avatar:
-                    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/1yCqfujAIQ/vk8dip6y_expires_30_days.png",
+                    "/images/womanTwo.webp",
                 name: "Emma Russo",
                 title: "Accountant, Brisbane",
             },

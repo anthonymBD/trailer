@@ -152,7 +152,7 @@ const ModelPage = () => {
                             </button>
                         </div>
 
-                        <div className="text-2xl text-secondary font-medium pt-6">
+                        <div className="text-2xl text-white font-medium pt-6">
                             {model.price}
                         </div>
                     </div>

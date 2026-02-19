@@ -35,7 +35,7 @@ const Home = () => {
         <Models sectionId={1} className="bg-white" />
       </div>
       <div id="faq" className="scroll-mt-20">
-        <FAQ sectionId={1} className="bg-primary" />
+        <FAQ sectionId={1} className="bg-primary py-32" />
       </div>
 </>
   )

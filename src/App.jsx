@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./layout/Navbar.jsx";
 import Home from "./pages/Home.jsx";
+import Fancy from "./pages/Fancy.jsx";
 import Footer from "./layout/Footer.jsx";
 import ModelPage from "./layout/ModelLayout.jsx";
 
@@ -12,6 +13,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="fancy" element={<Fancy />} />
         <Route path="/models/:slug" element={<ModelPage />} />
       </Routes>
       <Footer />

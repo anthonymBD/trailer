@@ -29,7 +29,7 @@ const featuresOne = {
     },
 
     image:
-        "/images/ctaTwo.jpg",
+        "/images/featured.jpg",
 };
 
 export { featuresOne };

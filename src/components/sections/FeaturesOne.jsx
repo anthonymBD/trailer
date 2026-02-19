@@ -1,5 +1,8 @@
 import React from "react";
+import { motion } from "motion/react";
 import { featuresOne } from "../../../constants/featuresOne";
+
+const ease = [0.25, 0.1, 0.25, 1];
 
 // react-icons
 import { TbCamper } from "react-icons/tb";
@@ -23,42 +26,83 @@ const FeaturesOne = ({ className = "" }) => {
                     <div className="flex-1 space-y-10">
 
                         <div className="space-y-6 max-w-xl">
-                            <span className="text-primary font-bold">
+                            <motion.span
+                                className=" font-bold block"
+                                initial={{ opacity: 0, y: 16 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-60px" }}
+                                transition={{ duration: 0.5, ease }}
+                            >
                                 {featuresOne.eyebrow}
-                            </span>
+                            </motion.span>
 
-                            <h2 className="text-4xl sm:text-5xl lg:text-6xl text-primary leading-tight">
+                            <motion.h2
+                                className="text-4xl sm:text-5xl lg:text-6xl leading-tight"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-60px" }}
+                                transition={{ duration: 0.6, delay: 0.08, ease }}
+                            >
                                 {featuresOne.title}
-                            </h2>
+                            </motion.h2>
 
-                            <p className="text-lg sm:text-xl text-primary/80">
+                            <motion.p
+                                className="text-lg sm:text-xl"
+                                initial={{ opacity: 0, y: 16 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-60px" }}
+                                transition={{ duration: 0.6, delay: 0.16, ease }}
+                            >
                                 {featuresOne.subtitle}
-                            </p>
+                            </motion.p>
                         </div>
 
                         {/* Features */}
-                        <div className="grid sm:grid-cols-2 gap-10">
+                        <motion.div
+                            className="grid sm:grid-cols-2 gap-10"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-80px" }}
+                            variants={{
+                                visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
+                                hidden: {},
+                            }}
+                        >
                             {featuresOne.features.map((item, i) => {
                                 const Icon = featureIcons[i];
 
                                 return (
-                                    <div key={i} className="space-y-4">
+                                    <motion.div
+                                        key={i}
+                                        className="space-y-4"
+                                        variants={{
+                                            hidden: { opacity: 0, y: 20 },
+                                            visible: { opacity: 1, y: 0 },
+                                        }}
+                                        transition={{ duration: 0.5, ease }}
+                                    >
                                         <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-secondary/10 text-secondary text-2xl">
                                             <Icon />
                                         </div>
 
-                                        <h3 className="text-xl md:text-2xl text-primary">
+                                        <h3 className="text-xl md:text-2x">
                                             {item.title}
                                         </h3>
 
-                                        <p className="text-primary/80">{item.text}</p>
-                                    </div>
+                                        <p className="">{item.text}</p>
+                                    </motion.div>
                                 );
                             })}
-                        </div>
+                        </motion.div>
 
                         {/* CTA */}
-                        <div className="flex items-center gap-6 pt-4">
+                        <motion.div
+                            className="flex items-center gap-6 pt-4"
+                            initial={{ opacity: 0, y: 12 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-40px" }}
+                            transition={{ duration: 0.5, delay: 0.3, ease }}
+                        >
                             <a
                                 href={featuresOne.cta.primary.href}
                                 className="px-6 py-3 rounded-md border border-primary text-primary hover:bg-primary hover:text-white transition"
@@ -73,17 +117,24 @@ const FeaturesOne = ({ className = "" }) => {
                                 {featuresOne.cta.secondary.label}
                                 <ArrowRight className="w-5 h-5" />
                             </a>
-                        </div>
+                        </motion.div>
 
                     </div>
 
                     {/* RIGHT IMAGE */}
-                    <div className="flex-1 w-full">
+                    <motion.div
+                        className="flex-1 w-full"
+                        initial={{ opacity: 0, scale: 0.98 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true, margin: "-60px" }}
+                        transition={{ duration: 0.8, delay: 0.15, ease }}
+                    >
                         <img
                             src={featuresOne.image}
+                            alt=""
                             className="w-full h-[380px] sm:h-[480px] md:h-[620px] object-cover rounded-xl"
                         />
-                    </div>
+                    </motion.div>
 
                 </div>
             </div>

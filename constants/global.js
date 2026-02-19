@@ -1,121 +1,98 @@
-const navLinks = [
+import { FiInstagram, FiFacebook, FiYoutube, FiCalendar } from "react-icons/fi";
+
+/* ---------------- NAVIGATION ---------------- */
+/* Clean real navigation structure (no dropdown yet — just scalable) */
+
+export const navLinks = [
     {
-        id: "home",
-        title: "Home",
-        path: "/"
+        id: "models",
+        label: "Models",
+        href: "#models",
+    },
+    {
+        id: "compare",
+        label: "Compare",
+        href: "#compare",
     },
     {
         id: "about",
-        title: "About Us",
-        path: "/about"
+        label: "About",
+        href: "#about",
     },
     {
-        id: "services",
-        title: "Services",
-        "path": "/services"
+        id: "faq",
+        label: "FAQ",
+        href: "#faq",
     },
     {
-        id: "booking",
-        title: "Booking",
-        "path": "tel:17313880181"
-    }
-    ,
+        id: "contact",
+        label: "Contact",
+        href: "#contact",
+    },
 
+    // CTA item (special styling later)
+    {
+        id: "book",
+        label: "Book appointment",
+        href: "#book",
+        icon: FiCalendar,
+        isCta: true,
+    },
 ];
 
-const logo = {
-    id: "logo",
-    title: "breath trailers",
-    image: "/images/svgs/logo.svg",
-}
+/* ---------------- LOGO ---------------- */
 
-const testimonials = {
-    1: {
-        eyebrow: "Real stories",
-        subtitle: "Owners who get it",
-        items: [
-            {
-                ratingImg:
-                    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/1yCqfujAIQ/0x70c5cr_expires_30_days.png",
-                quote:
-                    "We've done more in three months than we did in three years of talking about it.",
-                avatar:
-                    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/1yCqfujAIQ/jaaa7x28_expires_30_days.png",
-                name: "Sarah Mitchell",
-                title: "Marketing director, Sydney",
-            },
-            {
-                ratingImg:
-                    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/1yCqfujAIQ/d5wlnujr_expires_30_days.png",
-                quote:
-                    "My kids actually want to come on weekends now. That's worth everything.",
-                avatar:
-                    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/1yCqfujAIQ/jj7keqp5_expires_30_days.png",
-                name: "James Chen",
-                title: "Father of two, Melbourne",
-            },
-            {
-                ratingImg:
-                    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/1yCqfujAIQ/6giop1vf_expires_30_days.png",
-                quote:
-                    "It's the best decision we made. No regrets, just sunrises.",
-                avatar:
-                    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/1yCqfujAIQ/vk8dip6y_expires_30_days.png",
-                name: "Emma Russo",
-                title: "Accountant, Brisbane",
-            },
-        ],
-    },
+export const logo = {
+    id: "logo",
+    title: "Breath Trailers",
+    image: "/svgs/logo.svg",
 };
+
+/* ---------------- FOOTER ---------------- */
 
 export const footer = {
     description:
-        "Premium teardrop trailers that make weekends feel like weekends again. Australian made, adventure tested.",
+        "Premium teardrop trailers designed for real weekends — compact, towable, and ready for adventure.",
 
     columns: [
         {
             title: "Models",
             links: [
-                { label: "Breath Essential", href: "/models/essential" },
-                { label: "Breath Plus", href: "/models/plus" },
-                { label: "Breath Ultra", href: "/models/ultra" },
-                { label: "Breath Max", href: "/models/max" },
-                { label: "Compare Models", href: "/compare" },
+                { label: "Essential", href: "/models/essential" },
+                { label: "Plus", href: "/models/plus" },
+                { label: "Ultra", href: "/models/ultra" },
+                { label: "Max", href: "/models/max" },
+                { label: "Compare Models", href: "#" },
             ],
         },
         {
             title: "Company",
             links: [
-                { label: "Our Story", href: "/about" },
-                { label: "Ambassador Network", href: "/ambassadors" },
-                { label: "Press & Awards", href: "/press" },
-                { label: "Sustainability", href: "/sustainability" },
-                { label: "Careers", href: "/careers" },
+                { label: "About", href: "#" },
+                { label: "Ambassadors", href: "#" },
+                { label: "Press", href: "#" },
+                { label: "Careers", href: "#" },
             ],
         },
         {
             title: "Support",
             links: [
-                { label: "FAQ", href: "/faq" },
-                { label: "Owner's Manual", href: "/manual" },
-                { label: "Financing", href: "/financing" },
-                { label: "Warranty", href: "/warranty" },
-                { label: "Contact Us", href: "/contact" },
+                { label: "FAQ", href: "#" },
+                { label: "Financing", href: "#" },
+                { label: "Warranty", href: "#" },
+                { label: "Contact", href: "#" },
             ],
         },
     ],
 
     bottom: {
-        copyright: "© 2025 Breath Trailer. All rights reserved.",
-        social: [
-            { label: "Instagram", href:"#"},
-            { label: "facebook", href: "#" },
-            { label: "youtube", href: "#" }
-        ]
+        copyright: "© 2026 Breath Trailer",
 
+        // ICON BASED SOCIALS
+        social: [
+            { icon: FiInstagram, href: "#" },
+            { icon: FiFacebook, href: "#" },
+            { icon: FiYoutube, href: "#" },
+        ],
     },
 };
-
-
-
-export { navLinks, logo, testimonials }
